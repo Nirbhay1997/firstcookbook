@@ -1,4 +1,6 @@
-package 'sublime'
+
+
+
 package 'tree' do
  action :install
 end
@@ -9,10 +11,7 @@ end
 
 package 'ntp'
 
-file 'etc/motd' do
-  content "hello this is nirbhay 's  computer "
+template  'etc/motd' do
+  source 'motd.erb'
   action :create
-   owner 'root'
-   group 'root'
-
 end
